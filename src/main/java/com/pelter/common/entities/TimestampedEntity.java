@@ -4,8 +4,11 @@ import java.util.Date;
 
 public class TimestampedEntity extends NamedEntity {
 	private Date timestamp;
+	private Date createDate;
 
-	public TimestampedEntity() {
+	/* ===== Constructor ==== */
+	public TimestampedEntity(Date createDate) {
+		this.createDate = createDate;
 	}
 
 	public TimestampedEntity(Long id, String name) {
@@ -13,6 +16,12 @@ public class TimestampedEntity extends NamedEntity {
 		setName(name);
 	}
 
+	/* ==== Operations ==== */
+	public Date getCreateDate(){
+		return this.createDate;
+	}
+	
+	/* Date used as lastModified/update time */
 	public Date getTimestamp() {
 		return timestamp;
 	}
