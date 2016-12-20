@@ -17,8 +17,9 @@ public class TimestampedEntity extends NamedEntity {
 	}
 
 	/* ==== Operations ==== */
+	/* getCreationDate Immutale (defensive copy)*/
 	public Date getCreateDate(){
-		return this.createDate;
+		return new Date(this.createDate.getTime());
 	}
 	
 	/* Date used as lastModified/update time */
